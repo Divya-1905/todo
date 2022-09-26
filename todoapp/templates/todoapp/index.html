@@ -1,0 +1,22 @@
+<h1>My To Do List</h1> 
+<form method='POST'>
+    {% csrf_token %}
+    {{form.as_p}}
+    
+    <input type='submit'  value = 'submit' name = 'create todo'>
+    {% comment %} <button>submit</button> {% endcomment %}
+    
+</form>
+<div> 
+    {% for i in data %}
+    <P>{{i.details}}</p>
+        {%endfor %}
+    </div>
+</form>
+{% for task in tasks %}
+                {% if task.status == True %}
+                <strike>{{task}}, {{task.complete_time}}</strike>
+                {% else %}
+                {% endif %}
+        {% endfor %}
+

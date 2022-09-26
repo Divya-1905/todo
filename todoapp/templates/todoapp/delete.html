@@ -1,0 +1,8 @@
+<p>do you want to delete is "{{items}}"?</p>
+<a herf = {'url list'} >cancel</a>  
+<form method='POST'>
+    {% csrf_token %}
+    {% comment %} {{form.as_p}} {% endcomment %}
+    <a href="{{request.META.HTTP_REFERER}}">BACK</a>
+    <input type='submit'  value = 'submit' name = 'create todo'>   
+</form>
