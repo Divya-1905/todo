@@ -1,7 +1,27 @@
-<h1>hello</h1>
+<style>
+      .box{
+         padding-left: 4%;
+         padding-top: 2%;
+         border: 4px solid;
+         height: 36vh;
+         width: 22%;
+         margin-left: 35%;
+         margin-top: 18%;
+     }
+     .box h1{
+      text-align:center;
+     }
+  
+</style>
 
- <form method='POST'>
-    {%csrf_token%}
-    {{form.as_p}}
- <button>submit</button>  
- </form>
+
+<div class="box">
+   <h1 style="color:blue;">hello</h1>
+   <form method="POST">
+      {% csrf_token %}
+    
+  
+   {{form.as_p}}
+   <button>submit</button>
+</form>
+</div>

@@ -1,9 +1,28 @@
-<h1>welcome</h1>
-<form method='POST'>
-   {% csrf_token %}
+
+<style>
+      .box{
+         padding-left: 4%;
+    padding-top: 2%;
+    border: 4px solid;
+    height: 30vh;
+    width: 22%;
+    margin-left: 35%;
+    margin-top: 18%;
+     }
+  
+</style>
+
+
+<div class="box">
+   <h1 style="color:blue;">welcome</h1>
+   <form method="POST">
+      {% csrf_token %}
+    
+  
    {{form.as_p}}
    <button>submit</button>
 </form>
+</div>
 
 
 

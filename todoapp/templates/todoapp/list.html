@@ -1,13 +1,68 @@
-<h1>TODOAPP</h1> 
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap" rel="stylesheet">
+<style>
+  .box{
+    height: 71vh;
+    border: 1px solid;
+    border-radius: 37px;
+    width: 39%;
+    padding-right: 6%;
+    padding-left: -9%;
+    padding: 3%;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f7f7f9;
+    margin-left: 8%;
+    
+
+  }
+  .box h1{
+    text-align: center;
+  }
+  .box form{
+      padding-left: 3%;
+  }
+  .task{
+    margin-left: 63%;
+    font-family: 'Montserrat', sans-serif;
+    border: 4px solid;
+    height: 13vh;
+    width: 40vh;
+    padding: 2vh;
+    margin-bottom: 4%;
+    background-color:gray:}
+  .form{
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .task1{
+    margin-top: -38%;
+  }
+  </style>
+ <div class="box"> 
+  <h1>TODOAPP</h1> 
+
 <form method='POST'>
     {% csrf_token %}
       {{form.as_p}}
       <input type="submit" value="submit">
       
-
- {% for y in data %}   
-   {{y.details}}
-<a href="{%url 'update' y.id %}">update</a>
-<a href="{%url 'delete_task' y.id %}">delete</a>
-{%endfor%}
 </form>
+</div>
+
+
+      
+<div class='task1'>
+ {% for y in data %}   
+ <div class='task'>
+ <p>  {{y.details}}</p>
+   <br>
+<a href="{%url 'update' y.id %}">update</a>
+
+<a href="{%url 'delete_task' y.id %}">delete</a>
+</div>
+
+{%endfor%}
+</div>
+

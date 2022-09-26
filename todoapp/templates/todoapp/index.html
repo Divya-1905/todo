@@ -1,5 +1,19 @@
-<h1>My To Do List</h1> 
-<form method='POST'>
+
+<style>
+    .box{
+        height: 36vh;
+         width: 22%;
+    }
+    .box h1{
+        text-align:center:
+    }
+    .box form{
+        padding-left: 39%;
+    }
+    </style>
+   <div class="box">
+    <h1 style="color:red;">TODOAPP</h1>
+     <form method='POST'>
     {% csrf_token %}
     {{form.as_p}}
     
@@ -7,7 +21,8 @@
     {% comment %} <button>submit</button> {% endcomment %}
     
 </form>
-<div> 
+</div> 
+<div>
     {% for i in data %}
     <P>{{i.details}}</p>
         {%endfor %}
