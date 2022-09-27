@@ -1,11 +1,32 @@
 
 <style>
-    
-<p>do you want to delete is "{{items}}"?</p>
-<a herf = {'url list'} >cancel</a>  
+     .delete{
+        margin-top: 20%;
+        margin-left: 39%;
+        border: 1px solid;
+        border-radius: 5px;
+        height: 17vh;
+        width: 20%;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        background-color: bisque;
+     }
+     .delete a{
+        padding: 18%;
+     }
+     .delete form a{
+        padding-right: 25%;
+        padding-left: 6%;
+     }
+</style>
+
+<div class="delete">
+    <p>do you want to delete is'{{items}}"?</p>
+<a herf = {'url list'} >cancel</a> 
+
 <form method='POST'>
     {% csrf_token %}
-    {% comment %} {{form.as_p}} {% endcomment %}
     <a href="{{request.META.HTTP_REFERER}}">BACK</a>
     <input type='submit'  value = 'submit' name = 'create todo'>   
 </form>
+</div>
