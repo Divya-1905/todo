@@ -27,8 +27,8 @@
     margin-left: 63%;
     font-family: 'Montserrat', sans-serif;
     border: 2px solid;
-    height: 13vh;
-    width: 40vh;
+    height: 31vh;
+    width: 43vh;
     padding: 2vh;
     margin-bottom: 4%;
     background-color: mistyrose;
@@ -48,6 +48,15 @@
   #submit:hover {
     background-color: blue;
   }
+  .table{
+    padding:3px;
+  }
+  a {
+    padding: 6px;
+    margin-left: 76%;
+    margin-top: -40%;
+    border: 2px solid;
+  }
   </style>
  <div class="box"> 
   <h1>TODOAPP</h1> 
@@ -58,18 +67,44 @@
       <input type="submit" id='submit'value="submit">
       
 </form>
+
 </div>
-<div class='task1'>
- {% for y in data %}   
- <div class='task'>
- <p>  {{y.tittle}}</p>
- <p>  {{y.details}}</p>
+<a href="{%url 'signup' %}">adduser</a>
+<table class="table" border="2">
+  <thead>  
+    <th>title</th>  
+    <th>details</th>
+    <th>status</th>  
+    <th>takenHours</th> 
+    <th>plannedhours</th> 
+    <th>changes</th>
+</thead> 
+ {% for y in data %} 
+ <tr>
+  {% if y.takenHours > y.plannedhours%}
+  <td style = "background-color: red"> {{y.tittle}}</td>
+ {% elif y.takenHours < y.plannedhours%}
+ <td style = "background-color: green"> {{y.tittle}}</td>
+ {% else %}
+ <td > {{y.tittle}}</td>
+ {% endif %}
+ <td>  {{y.details}}</td>
+ {%if  y.complete %}
+ <td>completed</td>
+ {% else %}
+ <td>pending</td>
+ {% endif %}
+ <td>takenHours=  {{y.takenHours}}</td>
+ <td>plannedhours= {{y.plannedhours}}</td>
+
    <br>
-<a href="{%url 'update' y.id %}">update</a>
+  <td><a href="{%url 'update' y.id %}">update</a></td>
 
-<a href="{%url 'delete_task' y.id %}">delete</a>
+<td><a href="{%url 'delete_task' y.id %}">delete</a></td>
+ </tr>
 </div>
 
-{%endfor%}
+ {% endfor %}
+</table>
 </div>
 
