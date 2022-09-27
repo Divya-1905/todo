@@ -31,15 +31,14 @@ def update(request,pk):
         form = Todoform(request.POST,instance=data)
         if form.is_valid():
             # data.complete = data.takenHours + data.plannedhours 
-            form.save(commit=False)
-            form.user=request.user
-        return redirect('/index1')
+            form.save(request.user,commit=False)
+        return redirect('index')
     context = {'form':form}
     return render(request,'todoapp/update.html',context)
 def delete_task(request, pk):
     task = Todo.objects.get(id=pk)
     if request.method =="POST":
        task.delete()
-       return redirect('/index1')
+       return redirect('index')
     # context = {'form':task}        
     return render(request,'todoapp/delete.html',{})       
