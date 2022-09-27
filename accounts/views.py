@@ -25,7 +25,7 @@ def signin(request):
         if user:
             print(user)
             login(request,user)
-            return redirect ('todo/index1')
+            return redirect ('index')
         
     return render(request,'accounts/login.html',{'form':form})    
 
