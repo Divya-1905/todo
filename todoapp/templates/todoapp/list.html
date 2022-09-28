@@ -55,14 +55,20 @@
   #adduser{
     border: 2px solid;
     height: 3vh;
-    margin-left: 77%;
+    margin-left: 124%;
   }
+  #adduser:hover {
+    background-color:#7851a9;
+    color: white;
+  }  
+  
   table  a {
     margin-left:9%;
   }
   </style>
-  <a href="{%url 'signup' %}" id='adduser'> adduser</a>
+ 
  <div class="box"> 
+  <a href="{%url 'signup' %}" id='adduser'> adduser</a>
   <h1>TODOAPP</h1> 
 
 <form method='POST'>
