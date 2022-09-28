@@ -52,7 +52,7 @@
     padding:3px;
   }
   
-  a{
+  #adduser{
     border: 2px solid;
     height: 3vh;
     margin-left: 77%;
@@ -61,6 +61,7 @@
     margin-left:9%;
   }
   </style>
+  <a href="{%url 'signup' %}" id='adduser'> adduser</a>
  <div class="box"> 
   <h1>TODOAPP</h1> 
 
@@ -72,11 +73,11 @@
 </form>
 
 </div>
-<a href="{%url 'index'%}">add todo</a>
-<a href="{%url 'signup' %}">adduser</a>
+
+
 <table class="table" border="2">
   <thead>  
-    <th>title</th>  
+    <th>tittle</th>  
     <th>details</th>
     <th>status</th>  
     <th>takenHours</th> 
