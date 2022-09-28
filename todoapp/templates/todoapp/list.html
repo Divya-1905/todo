@@ -51,11 +51,14 @@
   .table{
     padding:3px;
   }
-  a {
-    padding: 6px;
-    margin-left: 76%;
-    margin-top: -40%;
+  
+  a{
     border: 2px solid;
+    height: 3vh;
+    margin-left: 77%;
+  }
+  table  a {
+    margin-left:9%;
   }
   </style>
  <div class="box"> 
@@ -69,6 +72,7 @@
 </form>
 
 </div>
+<a href="{%url 'index'%}">add todo</a>
 <a href="{%url 'signup' %}">adduser</a>
 <table class="table" border="2">
   <thead>  
@@ -98,9 +102,10 @@
  <td>plannedhours= {{y.plannedhours}}</td>
 
    <br>
-  <td><a href="{%url 'update' y.id %}">update</a></td>
-
-<td><a href="{%url 'delete_task' y.id %}">delete</a></td>
+   {% comment %} <div class='table1'> {% endcomment %}
+    <td><a href="{%url 'update' y.id %}">update</a></td>
+     <td><a href="{%url 'delete_task' y.id %}">delete</a></td>
+ {% comment %} </div> {% endcomment %}
  </tr>
 </div>
 
