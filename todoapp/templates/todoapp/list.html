@@ -65,8 +65,20 @@
   table  a {
     margin-left:9%;
   }
+  .user {
+    float: right;
+    border: 1px solid;
+    padding: 1%;
+}
   </style>
- 
+  <div class="user" 
+  {% if user %}
+  <td>{{user}}<td>
+   
+ {% else %}
+ no user
+ {% endif %}
+  </div>
  <div class="box"> 
   <a href="{%url 'signup' %}" id='adduser'> adduser</a>
   <h1>TODOAPP</h1> 
@@ -89,6 +101,7 @@
     <th>takenHours</th> 
     <th>plannedhours</th> 
     <th>changes</th>
+    {% comment %} <th>gmail</th> {% endcomment %}
 </thead> 
  {% for y in data %} 
  <tr>
@@ -105,6 +118,7 @@
  {% else %}
  <td>pending</td>
  {% endif %}
+
  <td>takenHours=  {{y.takenHours}}</td>
  <td>plannedhours= {{y.plannedhours}}</td>
 
@@ -118,5 +132,6 @@
 
  {% endfor %}
 </table>
+
 </div>
 

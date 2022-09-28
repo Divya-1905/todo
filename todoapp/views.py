@@ -12,6 +12,7 @@ from .form import Todoform
 # Create your views here.
 def index(request):
     form1= Todoform()
+    user=request.user
     data = Todo.objects.filter(user=request.user)
     # item_list = Todo.objects.order_by("_date")
     if request.method =="POST":
@@ -22,7 +23,7 @@ def index(request):
              
             #  return redirect('Todo') 
         
-    return render(request,'todoapp/list.html',{'form':form1,'data':data} )
+    return render(request,'todoapp/list.html',{'form':form1,'data':data,'user':user} )
 
 def update(request,pk):
     data = Todo.objects.get(id=pk)
